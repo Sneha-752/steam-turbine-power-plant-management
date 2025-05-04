@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="id_wise_sale" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b556dfb9-8463-4315-98e3-60eeae0b2e40">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="id" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     energy_sales_module.`sale_id` AS energy_sales_module_sale_id,
+     energy_sales_module.`customer_name` AS energy_sales_module_customer_name,
+     energy_sales_module.`customer_address` AS energy_sales_module_customer_address,
+     energy_sales_module.`contact_number` AS energy_sales_module_contact_number,
+     energy_sales_module.`energy_sold` AS energy_sales_module_energy_sold,
+     energy_sales_module.`rate` AS energy_sales_module_rate,
+     energy_sales_module.`total_amount` AS energy_sales_module_total_amount,
+     energy_sales_module.`sale_date` AS energy_sales_module_sale_date,
+     energy_sales_module.`payment_status` AS energy_sales_module_payment_status,
+     energy_sales_module.`remarks` AS energy_sales_module_remarks
+FROM
+     `energy_sales_module` energy_sales_module
+WHERE sale_id = $P{id}]]>
+	</queryString>
+	<field name="energy_sales_module_sale_id" class="java.lang.Integer"/>
+	<field name="energy_sales_module_customer_name" class="java.lang.String"/>
+	<field name="energy_sales_module_customer_address" class="java.lang.String"/>
+	<field name="energy_sales_module_contact_number" class="java.lang.String"/>
+	<field name="energy_sales_module_energy_sold" class="java.lang.String"/>
+	<field name="energy_sales_module_rate" class="java.lang.String"/>
+	<field name="energy_sales_module_total_amount" class="java.lang.String"/>
+	<field name="energy_sales_module_sale_date" class="java.lang.String"/>
+	<field name="energy_sales_module_payment_status" class="java.lang.String"/>
+	<field name="energy_sales_module_remarks" class="java.lang.String"/>
+	<group name="energy_sales_module_sale_id">
+		<groupExpression><![CDATA[$F{energy_sales_module_sale_id}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="270" y="15" width="250" height="51" forecolor="#660000" uuid="0e3c33fb-3bac-4a1b-aec5-cbb7dd8c92fe"/>
+				<textElement>
+					<font fontName="Bell MT" size="36" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Workers Salary]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="80" height="20" uuid="2bae4299-c3e9-4cc9-90fa-1cc8eabe70f8"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sale ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="0" width="80" height="20" uuid="76c6c9d4-9c57-4b46-8ee0-1ca311310a52"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Customer Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="160" y="0" width="80" height="20" uuid="40d9e280-d81c-4ff7-8135-1a2a5ab93310"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Address]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="240" y="0" width="80" height="20" uuid="54e04714-16e1-4ab4-acd0-15c3bf7bf179"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="320" y="0" width="80" height="20" uuid="e2269286-6985-4f9e-9078-679a9295de6b"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Energy Sold ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="0" width="80" height="20" uuid="61a3aafa-6ffe-4e3d-8f7b-32036307e597"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Rate]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="480" y="0" width="80" height="20" uuid="468c5756-4080-4a4a-8a39-ae2351435cde"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="560" y="0" width="80" height="20" uuid="727cd4f2-84a9-49fe-a4cb-42e4783b0df0"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sale Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="640" y="0" width="80" height="20" uuid="fdfc49c5-3ab2-45d4-9bd0-2ee59edbbf81"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Payment Status]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="720" y="0" width="80" height="20" uuid="73db9aa0-13c0-470d-b009-c787d68f6b38"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Remarks]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="30" width="802" height="1" uuid="d59036b9-2293-4686-a409-e47e19529bfc"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="23" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="80" height="20" uuid="db8c9fb7-6747-4afd-a8f8-f169555140f7"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{energy_sales_module_sale_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="0" width="80" height="20" uuid="e18e0277-da36-47d8-a48c-81b401f19894"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{energy_sales_module_customer_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="160" y="0" width="80" height="20" uuid="57c2f209-308c-4020-af9e-22bfc0098a7f"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{energy_sales_module_customer_address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="240" y="0" width="80" height="20" uuid="68ef7a42-6845-42a3-924b-4b8ec3b490d3"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{energy_sales_module_contact_number}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="0" width="80" height="20" uuid="a0c875ab-81f3-4503-87f9-f6ecb98d9b3f"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{energy_sales_module_energy_sold}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="0" width="80" height="20" uuid="136ce92f-2080-4982-868d-9012a340f367"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{energy_sales_module_rate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="480" y="0" width="80" height="20" uuid="a2ab4e3a-5665-4494-abff-fa99c1255b28"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{energy_sales_module_total_amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="560" y="0" width="80" height="20" uuid="99c6453c-d5ed-437b-8985-1ec52fa0c07a"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{energy_sales_module_sale_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="640" y="0" width="80" height="20" uuid="729f49ae-1d95-4169-bd8b-61164e301c14"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{energy_sales_module_payment_status}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="720" y="0" width="80" height="20" uuid="bf571fbc-e154-42f8-9120-6e3ab3c50607"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{energy_sales_module_remarks}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="6" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="5" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="6" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Cost Estimation " pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d23beff9-bc99-4869-8ba9-a7ca8fd0b6b1">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="131"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     cost_estimation_module.`cost_id` AS cost_estimation_module_cost_id,
+     cost_estimation_module.`boiler_id` AS cost_estimation_module_boiler_id,
+     cost_estimation_module.`modification_description` AS cost_estimation_module_modification_description,
+     cost_estimation_module.`estimated_cost` AS cost_estimation_module_estimated_cost,
+     cost_estimation_module.`actual_cost` AS cost_estimation_module_actual_cost,
+     cost_estimation_module.`cost_date` AS cost_estimation_module_cost_date,
+     cost_estimation_module.`remarks` AS cost_estimation_module_remarks
+FROM
+     `cost_estimation_module` cost_estimation_module]]>
+	</queryString>
+	<field name="cost_estimation_module_cost_id" class="java.lang.Integer"/>
+	<field name="cost_estimation_module_boiler_id" class="java.lang.String"/>
+	<field name="cost_estimation_module_modification_description" class="java.lang.String"/>
+	<field name="cost_estimation_module_estimated_cost" class="java.lang.String"/>
+	<field name="cost_estimation_module_actual_cost" class="java.lang.String"/>
+	<field name="cost_estimation_module_cost_date" class="java.lang.String"/>
+	<field name="cost_estimation_module_remarks" class="java.lang.String"/>
+	<group name="cost_estimation_module_cost_id">
+		<groupExpression><![CDATA[$F{cost_estimation_module_cost_id}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="264" y="17" width="269" height="50" forecolor="#990000" uuid="08278496-73c5-4f9f-a08c-cbfcf145bd29"/>
+				<textElement>
+					<font fontName="Bell MT" size="36" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cost Estimation]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="39" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="103" height="20" uuid="c26917c0-a461-417e-a298-f95a83f59251"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cost Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="103" y="0" width="92" height="20" uuid="714ba3ef-30cc-490a-a85a-40149bfd700e"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Boiler Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="195" y="0" width="136" height="20" uuid="41466bc3-cb99-4b36-93f6-b20333cefc5d"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Modification Description]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="342" y="0" width="114" height="20" uuid="9ab8b92b-7a3c-4392-b875-6e15ca7cfda0"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Estimated Cost]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="456" y="0" width="114" height="20" uuid="65aa63db-191e-471e-a760-91753d89a9f1"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Actual Cost]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="570" y="0" width="114" height="20" uuid="d5b944e0-19ff-4767-9a80-c6bb4ce25112"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cost Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="684" y="0" width="114" height="20" uuid="86cb487d-b746-4a02-9e55-94ecc8efc6a7"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Remark]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="32" width="802" height="1" uuid="63bff520-ab3e-4917-af1b-7946a90b987b"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="23" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="114" height="20" uuid="405e42a0-903e-4f77-b078-69754a4a1fdd"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{cost_estimation_module_cost_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="114" y="0" width="114" height="20" uuid="f46cc998-0a66-429b-80eb-521cf9f9d1c4"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{cost_estimation_module_boiler_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="228" y="0" width="114" height="20" uuid="f109064f-60af-498f-8370-e12c2bdc7cf2"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{cost_estimation_module_modification_description}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="342" y="0" width="114" height="20" uuid="9ab1c707-bb0b-4faf-892f-8aba32cd4bf8"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{cost_estimation_module_estimated_cost}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="456" y="0" width="114" height="20" uuid="9ef897df-6dc8-4c0e-9dbb-df8e18ddf419"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{cost_estimation_module_actual_cost}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="570" y="0" width="114" height="20" uuid="6eed3893-3918-45bf-8357-de60ed567f96"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{cost_estimation_module_cost_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="684" y="0" width="114" height="20" uuid="50e55c64-04ad-449f-806f-326663eabd1c"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{cost_estimation_module_remarks}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="5" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="5" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="5" splitType="Stretch"/>
+	</summary>
+</jasperReport>

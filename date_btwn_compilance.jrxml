@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="date_btwn_compilance" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="69b52d71-9acc-416a-8f52-c934546d99e6">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="date1" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="date2" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     environmental_compliance_module.`compliance_id` AS environmental_compliance_module_compliance_id,
+     environmental_compliance_module.`boiler_id` AS environmental_compliance_module_boiler_id,
+     environmental_compliance_module.`emission_type` AS environmental_compliance_module_emission_type,
+     environmental_compliance_module.`emission_level` AS environmental_compliance_module_emission_level,
+     environmental_compliance_module.`compliance_date` AS environmental_compliance_module_compliance_date,
+     environmental_compliance_module.`compliance_status` AS environmental_compliance_module_compliance_status,
+     environmental_compliance_module.`remarks` AS environmental_compliance_module_remarks
+FROM
+     `environmental_compliance_module` environmental_compliance_module
+WHERE compliance_date between $P{date1} and $P{date2};]]>
+	</queryString>
+	<field name="environmental_compliance_module_compliance_id" class="java.lang.Integer"/>
+	<field name="environmental_compliance_module_boiler_id" class="java.lang.String"/>
+	<field name="environmental_compliance_module_emission_type" class="java.lang.String"/>
+	<field name="environmental_compliance_module_emission_level" class="java.lang.String"/>
+	<field name="environmental_compliance_module_compliance_date" class="java.lang.String"/>
+	<field name="environmental_compliance_module_compliance_status" class="java.lang.String"/>
+	<field name="environmental_compliance_module_remarks" class="java.lang.String"/>
+	<group name="environmental_compliance_module_compliance_id">
+		<groupExpression><![CDATA[$F{environmental_compliance_module_compliance_id}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="182" y="12" width="388" height="55" forecolor="#990000" uuid="20d8e5c9-abba-4514-83af-e64a3ab94315"/>
+				<textElement>
+					<font fontName="Bell MT" size="36" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date_btwn_Compilance]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="114" height="20" uuid="d9f956d5-dbd4-4b13-81b4-52bd8bb27b49"/>
+				<text><![CDATA[environmental_compliance_module_compliance_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="114" y="0" width="114" height="20" uuid="cbd2cec6-62c5-4ca7-b250-1d79ba71988b"/>
+				<text><![CDATA[environmental_compliance_module_boiler_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="228" y="0" width="114" height="20" uuid="29256964-8385-4caf-9e6f-46236447da6f"/>
+				<text><![CDATA[environmental_compliance_module_emission_type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="342" y="0" width="114" height="20" uuid="91e77a57-f892-4083-84a7-9179689e8f1f"/>
+				<text><![CDATA[environmental_compliance_module_emission_level]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="456" y="0" width="114" height="20" uuid="a295d1e8-0491-4ea6-889b-e1a819d3e746"/>
+				<text><![CDATA[environmental_compliance_module_compliance_date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="570" y="0" width="114" height="20" uuid="b28fc389-9b99-4b78-9ea5-2144e6938651"/>
+				<text><![CDATA[environmental_compliance_module_compliance_status]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="684" y="0" width="114" height="20" uuid="be76ab48-df9e-426f-b535-d89cceecc58c"/>
+				<text><![CDATA[environmental_compliance_module_remarks]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="114" height="20" uuid="91375147-2ccd-4bd9-8bc9-af71e0411e01"/>
+				<textFieldExpression><![CDATA[$F{environmental_compliance_module_compliance_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="114" y="0" width="114" height="20" uuid="91d6a21a-428c-4419-854a-9cc99b042338"/>
+				<textFieldExpression><![CDATA[$F{environmental_compliance_module_boiler_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="228" y="0" width="114" height="20" uuid="21de736a-ffa7-41a7-8ac4-f3415ba047e4"/>
+				<textFieldExpression><![CDATA[$F{environmental_compliance_module_emission_type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="342" y="0" width="114" height="20" uuid="0c886f75-466a-49b7-9da4-5c04a71cbb7b"/>
+				<textFieldExpression><![CDATA[$F{environmental_compliance_module_emission_level}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="456" y="0" width="114" height="20" uuid="cfa1ef37-5090-462b-9b20-a1a1b4ac708b"/>
+				<textFieldExpression><![CDATA[$F{environmental_compliance_module_compliance_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="570" y="0" width="114" height="20" uuid="0dbec6b9-23e0-4acb-a38d-98658b3a0f4f"/>
+				<textFieldExpression><![CDATA[$F{environmental_compliance_module_compliance_status}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="684" y="0" width="114" height="20" uuid="cbd9b3d9-39fa-455b-a555-b3d65403e931"/>
+				<textFieldExpression><![CDATA[$F{environmental_compliance_module_remarks}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="6" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="7" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="6" splitType="Stretch"/>
+	</summary>
+</jasperReport>

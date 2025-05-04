@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="date_btwn_boiler" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c295cd32-820a-4d25-a8c8-bb3c54e7eaa3">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="date1" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="date2" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     boiler_management.`boiler_id` AS boiler_management_boiler_id,
+     boiler_management.`boiler_capacity` AS boiler_management_boiler_capacity,
+     boiler_management.`boiler_type` AS boiler_management_boiler_type,
+     boiler_management.`steam_pressure` AS boiler_management_steam_pressure,
+     boiler_management.`steam_temperature` AS boiler_management_steam_temperature,
+     boiler_management.`feed_water_temperature` AS boiler_management_feed_water_temperature,
+     boiler_management.`fuel_type` AS boiler_management_fuel_type,
+     boiler_management.`fuel_consumption_rate` AS boiler_management_fuel_consumption_rate,
+     boiler_management.`boiler_efficiency` AS boiler_management_boiler_efficiency,
+     boiler_management.`last_maintenance_date` AS boiler_management_last_maintenance_date,
+     boiler_management.`next_maintenance_date` AS boiler_management_next_maintenance_date
+FROM
+     `boiler_management` boiler_management
+WHERE last_maintenance_date between $P{date1} and $P{date2};]]>
+	</queryString>
+	<field name="boiler_management_boiler_id" class="java.lang.Integer"/>
+	<field name="boiler_management_boiler_capacity" class="java.lang.String"/>
+	<field name="boiler_management_boiler_type" class="java.lang.String"/>
+	<field name="boiler_management_steam_pressure" class="java.lang.String"/>
+	<field name="boiler_management_steam_temperature" class="java.lang.String"/>
+	<field name="boiler_management_feed_water_temperature" class="java.lang.String"/>
+	<field name="boiler_management_fuel_type" class="java.lang.String"/>
+	<field name="boiler_management_fuel_consumption_rate" class="java.lang.String"/>
+	<field name="boiler_management_boiler_efficiency" class="java.lang.String"/>
+	<field name="boiler_management_last_maintenance_date" class="java.lang.String"/>
+	<field name="boiler_management_next_maintenance_date" class="java.lang.String"/>
+	<group name="boiler_management_boiler_id">
+		<groupExpression><![CDATA[$F{boiler_management_boiler_id}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="216" y="12" width="310" height="50" forecolor="#990000" uuid="8310a4da-9570-4948-864d-d2e7c9ccdbf8"/>
+				<textElement>
+					<font fontName="Bell MT" size="36" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date_btwn_Boiler]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="27" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="72" height="20" uuid="64fcc380-cb9b-4c40-9e3f-a2d8db3a457a"/>
+				<text><![CDATA[boiler_management_boiler_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="72" y="0" width="72" height="20" uuid="1480ff89-98e7-4486-82b2-238ad310e394"/>
+				<text><![CDATA[boiler_management_boiler_capacity]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="144" y="0" width="72" height="20" uuid="ea13da75-91ab-4236-a555-3122ce5f7175"/>
+				<text><![CDATA[boiler_management_boiler_type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="216" y="0" width="72" height="20" uuid="971b7e8f-781c-4d55-8f72-658335bb440e"/>
+				<text><![CDATA[boiler_management_steam_pressure]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="288" y="0" width="72" height="20" uuid="546f7e48-6b23-4875-bf1e-fbad5b3668ba"/>
+				<text><![CDATA[boiler_management_steam_temperature]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="0" width="72" height="20" uuid="503bb275-859e-4486-aa60-2e323a39f5fe"/>
+				<text><![CDATA[boiler_management_feed_water_temperature]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="432" y="0" width="72" height="20" uuid="374c8c49-d63e-462f-b4fe-06703781da15"/>
+				<text><![CDATA[boiler_management_fuel_type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="504" y="0" width="72" height="20" uuid="e5efe74d-64a6-4eb1-84d7-1ec7ee9438be"/>
+				<text><![CDATA[boiler_management_fuel_consumption_rate]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="576" y="0" width="72" height="20" uuid="7a58f8fa-d903-42c1-a349-ad3b58d89a0d"/>
+				<text><![CDATA[boiler_management_boiler_efficiency]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="648" y="0" width="72" height="20" uuid="905edc0a-33a9-42b1-bb8f-dd22bd7ba735"/>
+				<text><![CDATA[boiler_management_last_maintenance_date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="720" y="0" width="72" height="20" uuid="b8114699-f86c-41cc-88ab-9f01e7f2fd44"/>
+				<text><![CDATA[boiler_management_next_maintenance_date]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="27" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="72" height="20" uuid="753a202a-2b75-440d-b753-f03f05714726"/>
+				<textFieldExpression><![CDATA[$F{boiler_management_boiler_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="72" y="0" width="72" height="20" uuid="d13c543d-8008-4d0a-a045-575d1fe3b88b"/>
+				<textFieldExpression><![CDATA[$F{boiler_management_boiler_capacity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="144" y="0" width="72" height="20" uuid="5fade02f-f773-4745-94b7-a7aedad12083"/>
+				<textFieldExpression><![CDATA[$F{boiler_management_boiler_type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="216" y="0" width="72" height="20" uuid="632c0f66-acb9-4db7-88d4-7e644888548f"/>
+				<textFieldExpression><![CDATA[$F{boiler_management_steam_pressure}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="288" y="0" width="72" height="20" uuid="fd5c149e-abce-4cd5-9aa9-03f248bd1a28"/>
+				<textFieldExpression><![CDATA[$F{boiler_management_steam_temperature}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="360" y="0" width="72" height="20" uuid="7b2dc8c9-d4ce-4886-a020-8b4d4a4658e8"/>
+				<textFieldExpression><![CDATA[$F{boiler_management_feed_water_temperature}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="432" y="0" width="72" height="20" uuid="6b1b395a-bf47-43aa-9a75-7421b0297ed9"/>
+				<textFieldExpression><![CDATA[$F{boiler_management_fuel_type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="504" y="0" width="72" height="20" uuid="3f2449e9-9c64-4b86-9dfe-179dcb1ebac2"/>
+				<textFieldExpression><![CDATA[$F{boiler_management_fuel_consumption_rate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="576" y="0" width="72" height="20" uuid="c79d8ce9-02bb-493a-8a5e-e8ac63228a82"/>
+				<textFieldExpression><![CDATA[$F{boiler_management_boiler_efficiency}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="648" y="0" width="72" height="20" uuid="bcec87a9-e639-4654-a015-5bb54ded8775"/>
+				<textFieldExpression><![CDATA[$F{boiler_management_last_maintenance_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="720" y="0" width="72" height="20" uuid="72941192-e48b-4da5-8356-93cc21630080"/>
+				<textFieldExpression><![CDATA[$F{boiler_management_next_maintenance_date}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="4" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="8" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="9" splitType="Stretch"/>
+	</summary>
+</jasperReport>
